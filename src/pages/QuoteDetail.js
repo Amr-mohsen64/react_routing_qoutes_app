@@ -1,5 +1,6 @@
 import React from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, Route } from 'react-router-dom'
+import Comments from '../components/comments/Comments';
 
 
 const QuoteDetail = () => {
@@ -11,6 +12,9 @@ const QuoteDetail = () => {
         <>
             <h1>QuoteDetail page</h1>
             <p>{quoteId}</p>
+            <Route path={`/quotes/${quoteId}/comments`} >
+                <Comments />
+            </Route>
         </>
     )
 }
