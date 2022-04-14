@@ -1,4 +1,4 @@
-const FIREBASE_DOMAIN = 'https://react-prep-default-rtdb.firebaseio.com';
+const FIREBASE_DOMAIN = 'https://quotesapp-71140-default-rtdb.firebaseio.com/';
 
 export async function getAllQuotes() {
   const response = await fetch(`${FIREBASE_DOMAIN}/quotes.json`);
@@ -56,6 +56,7 @@ export async function addQuote(quoteData) {
 }
 
 export async function addComment(requestData) {
+  console.log(requestData);
   const response = await fetch(`${FIREBASE_DOMAIN}/comments/${requestData.quoteId}.json`, {
     method: 'POST',
     body: JSON.stringify(requestData.commentData),
